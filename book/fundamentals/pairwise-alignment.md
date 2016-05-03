@@ -259,7 +259,7 @@ We're next going to work through the standard algorithm for aligning a pair of b
 
 ### Stepwise Needleman-Wunsch alignment <link src="Gn3Vj6"/>
 
-Needleman-Wunsch alignment is similar to the approach that we explored above. We'll work through the steps of the algorithm first, and then automate the process by defining Python functions that perform the steps for us given a pair of sequences.
+Needleman-Wunsch alignment is similar to the approach explored above. We'll work through the steps of the algorithm first, and then automate the process by defining Python functions that perform the steps for us given a pair of sequences.
 
 We'll define two protein sequences to work with in this section. After working through this section, come back to this cell and change these protein sequences to explore how it changes the process. Make some small changes and some large changes to the protein sequences. The sequences that we're starting with are the same that are used in Chapter 2 of [Biological Sequence Analysis](http://amzn.to/1IYUEz2).
 
