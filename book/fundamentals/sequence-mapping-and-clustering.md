@@ -55,7 +55,7 @@ The first approach we'll look at is one that has been called *furthest neighbor*
 
 The way this algorithm works is that we start with our list of sequences. Because this is *de novo* clustering, by definition our first sequence is added to a new cluster (because there are no pre-existing clusters). We'll call this `OTU 1`. We then iterate over the remaining sequences. For the second sequence we compute its pairwise alignment with the first, followed by computing their percent similarity. If their percent similarity is greater than or equal to the similarity threshold, we add the second sequence to `OTU 1`. If is it less than the similarity threshold, we create a new OTU, `OTU 2`, and add the second sequence to that cluster.
 
-We continue iterating over the remaining sequences. For each sequence, we compute the pairwise similarity between that sequence and all sequences in each OTU. **If the percent similarity between a query sequence and *all* sequences in a given OTU (say OTU $x$ is greater than the similarity threshold, we add the sequence to OTU $x$.)** Otherwise we check the next OTU in the list. If this criteria is not met for any of the OTUs, then we define a new OTU to add the sequence to.
+We continue iterating over the remaining sequences. For each sequence, we compute the pairwise similarity between that sequence and all sequences in each OTU. **If the percent similarity between a query sequence and *all* sequences in a given OTU (say OTU $x$ is greater than the similarity threshold, we add the sequence to OTU $x$).** Otherwise we check the next OTU in the list. If this criteria is not met for any of the OTUs, then we define a new OTU to add the sequence to.
 
 Let's implement this, and then try it out on some test sequences.
 
@@ -139,7 +139,7 @@ Let's implement this, and then try it out on some test sequences.
 >>> print(aln1)
 ```
 
-Our first sequence, ``s1``, will define a new OTU. We'll call that OTU ``OTU 1``. Our second sequence, ``s2`` falls outside of the similarity threshold to ``S1``, it will also define a new OTU. We'll call that OTU ``OTU 2``.
+Our first sequence, ``s1``, will define a new OTU. We'll call that OTU ``OTU 1``. Our second sequence, ``s2`` falls outside of the similarity threshold to ``S1``, it will also define a new OTU. We'll call this OTU ``OTU 2``.
 
 ```python
 >>> clusters, num_alignments = cluster([s1, s2], 0.70,
